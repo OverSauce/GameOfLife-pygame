@@ -1,16 +1,25 @@
 import numpy as np
 import pygame
+import tkinter 
+
+root = tkinter.Tk()
+width = root.winfo_screenwidth()
+height = root.winfo_screenheight()
+window = pygame.display.set_mode((width, height))
 
 class cells():
 
     dx = 20         # Number of pixels for each cell (squared)
 
-    def __init__(self, width, height, window):
+    def __init__(self):
         self.width = width
         self.height = height
         self.window = window
         self.grid = np.zeros((self.width//self.dx, self.height//self.dx), dtype=bool)
     
+    def kill_all(self):
+        self.grid = np.zeros((self.width//self.dx, self.height//self.dx), dtype=bool)
+
     def check_mouse_click(self, pos):
 
         x, y = pos
