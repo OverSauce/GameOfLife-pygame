@@ -1,10 +1,16 @@
 import numpy as np
 import pygame
-import tkinter 
 
-root = tkinter.Tk()
-width = root.winfo_screenwidth()
-height = root.winfo_screenheight()
+width, heigth = 0, 0
+
+try:
+    import tkinter 
+    root = tkinter.Tk()
+    width = root.winfo_screenwidth()
+    height = root.winfo_screenheight()
+except:
+    width, height = 720, 720
+
 window = pygame.display.set_mode((width, height))
 
 class cells():
