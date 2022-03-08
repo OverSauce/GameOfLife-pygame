@@ -1,18 +1,13 @@
 import pygame
-from cells import cells
+from cells import cells, window
 
 pygame.init()
 
-# Resolution
-
-width, height = 1080, 720
-window = pygame.display.set_mode((width, height))
-
 def main():
     run = True
-    clock = pygame.time.Clock() # FPS
+    clock = pygame.time.Clock()
 
-    CELLS = cells(width, height, window)
+    CELLS = cells()
 
     while run:
         clock.tick(60)
@@ -24,6 +19,10 @@ def main():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     CELLS.check_neighbours()
+                if event.key == pygame.K_ESCAPE:
+                    run = False
+                if event.key == pygame.K_c:
+                    CELLS.kill_all()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 CELLS.check_mouse_click(event.pos)
 
