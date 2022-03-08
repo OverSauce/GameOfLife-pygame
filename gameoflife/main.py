@@ -22,7 +22,7 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     run = False
                 if event.key == pygame.K_c:
-                    CELLS.kill_all()
+                    CELLS.defaults()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 CELLS.check_mouse_click(event.pos)
 
