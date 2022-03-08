@@ -17,7 +17,7 @@ class cells():
         self.window = window
         self.grid = np.zeros((self.width//self.dx, self.height//self.dx), dtype=bool)
     
-    def kill_all(self):
+    def defaults(self):
         self.grid = np.zeros((self.width//self.dx, self.height//self.dx), dtype=bool)
 
     def check_mouse_click(self, pos):
