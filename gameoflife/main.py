@@ -3,11 +3,10 @@ from cells import cells
 
 pygame.init()
 
-# Screen resolution, font
+# Resolution
 
 width, height = 1080, 720
 window = pygame.display.set_mode((width, height))
-text = pygame.font.SysFont("comicsans", 20)
 
 def main():
     run = True
